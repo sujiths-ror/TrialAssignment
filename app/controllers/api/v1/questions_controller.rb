@@ -2,6 +2,10 @@ class Api::V1::QuestionsController < ApplicationController
 
   before_action :set_question, only: %i(show edit update destroy)
 
+  def create
+    @question = Question.new(question_params)
+  end
+
   def index
      @questions = Question.all.page(params[:page] || 1).per(10)
   end

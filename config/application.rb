@@ -31,5 +31,10 @@ module TrialAssignment
     config.generators.system_tests = nil
 
     config.active_job.queue_adapter = :delayed_job
+
+    config.action_dispatch.default_headers = {
+        'Access-Control-Allow-Origin' => '*',
+        'Access-Control-Request-Method' => %w{GET POST PUT PATCH DELETE OPTIONS}.join(",")
+      }
   end
 end
