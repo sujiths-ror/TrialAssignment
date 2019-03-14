@@ -1,3 +1,18 @@
 // Place all the styles related to the questions controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+body{
+  text-align: center !important;
+}
+.import_form {
+  text-align: center;
+  margin-top: 70px;
+  border: 2px dashed #dedada;
+  width: auto;
+  display: inline-block;
+  padding: 15px;
+  border-radius: 5px;
+}
+.home_text {
+  margin-top: 100px;
+}
