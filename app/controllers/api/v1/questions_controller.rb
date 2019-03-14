@@ -1,6 +1,6 @@
 class Api::V1::QuestionsController < ApplicationController
 
-  before_action :set_question, only: %i(show edit update)
+  before_action :set_question, only: %i(show edit update destroy)
 
   def index
      @questions = Question.all.page(params[:page] || 1).per(10)
@@ -12,6 +12,10 @@ class Api::V1::QuestionsController < ApplicationController
 
   def update
     @question.update(question_params) if @question.present?
+  end
+
+  def destroy
+    @question.destroy if @question.present?
   end
 
   private
