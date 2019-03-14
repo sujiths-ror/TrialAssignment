@@ -58,3 +58,4 @@ gem 'haml'
 gem 'bootstrap', '~> 4.3.1'
 gem 'jquery-rails'
 gem 'activerecord-import', require: false
+gem 'delayed_job_active_record'
