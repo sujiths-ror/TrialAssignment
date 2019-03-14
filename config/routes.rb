@@ -7,4 +7,10 @@ Rails.application.routes.draw do
       post 'import'
     end
   end
+
+  namespace 'api' do
+    namespace 'v1' do
+      resources :questions
+    end
+  end
 end

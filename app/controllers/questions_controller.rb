@@ -12,8 +12,4 @@ class QuestionsController < ApplicationController
       end
     end
   end
-
-  def index
-
-  end
 end
