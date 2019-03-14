@@ -11,4 +11,5 @@ json.data do
       json.questions nil
     end
   end
+  json.next_page @questions.next_page
 end
