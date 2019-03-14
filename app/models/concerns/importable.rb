@@ -1,5 +1,4 @@
 require 'csv'
-# require 'active_record'
 require 'activerecord-import'
 
 module Importable
@@ -9,7 +8,7 @@ module Importable
     @roles = Role.pluck(:name, :id).to_h
     @mappings = Mapping.pluck(:name, :id).to_h
     items = []
-    CSV.foreach(file.path, headers: true) do |row|
+    CSV.foreach(file, headers: true) do |row|
       role_id = find_or_create_role_from_csv(row)
       mapping_id = find_or_create_mapping_from_csv(row)
       question_json = build_question_json(row, mapping_id, role_id)
@@ -49,7 +48,7 @@ module Importable
         mapping_id: mapping_id
       }
     else
-      #TODO handle invalid data
+      #TODO handle invalid data, write to another csv
       false
     end
   end
