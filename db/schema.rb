@@ -32,6 +32,8 @@ ActiveRecord::Schema.define(version: 2019_03_14_075342) do
     t.integer "frequency"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "role_id"
+    t.bigint "mapping_id"
   end
 
   create_table "roles", force: :cascade do |t|
