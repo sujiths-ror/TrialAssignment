@@ -1,5 +1,5 @@
 class Api::V1::QuestionsController < ApplicationController
-
+  respond_to :json
   before_action :set_question, only: %i(show edit update destroy)
 
   def create
