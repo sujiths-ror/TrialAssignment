@@ -60,3 +60,4 @@ gem 'jquery-rails'
 gem 'activerecord-import', require: false
 gem 'delayed_job_active_record'
 gem 'kaminari'
+gem 'rack-cors', require: 'rack/cors'
