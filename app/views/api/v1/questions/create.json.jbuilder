@@ -7,4 +7,5 @@ if @question.save
 else
   json.status 500
   json.message @question.errors.full_messages
+  json.data {}
 end

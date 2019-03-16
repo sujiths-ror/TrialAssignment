@@ -19,7 +19,12 @@ class Api::V1::QuestionsController < ApplicationController
   end
 
   def destroy
-    @question.destroy if @question.present?
+    if @question.present?
+      @question.destroy
+      render json: {status: 200, data: {}, message: 'Question deleted'}
+    else
+      render json: {status: 404, data: {}, message: 'Question Not Found'}
+    end
   end
 
   private
